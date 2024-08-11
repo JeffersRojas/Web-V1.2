@@ -1,139 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, 1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
-
-    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
-
-    <title>Flotas Internas</title>
+    <title>Gestión de Flotas Internas</title>
 </head>
-<header>
-  <h1>Flotas Internas</h1>
-  <nav>
-      <ul>
-          <li><a href="#">Gestión de Vehículos</a>
-              <ul class="submenu">
-                  <li><a href="#">Vehículos</a></li>
-                  <li><a href="#">Concesionarios</a></li>
-              </ul>
-          </li>
-          <li><a href="#">Operaciones</a>
-              <ul class="submenu">
-                  <li><a href="#">Ingresar</a></li>
-                  <li><a href="#">Asignaciones</a></li>
-                  <li><a href="#">Devoluciones</a></li>
-              </ul>
-          </li>
-          <li><a href="#">Reportes</a>
-              <ul class="submenu">
-                  <li><a href="#">Comparendos</a></li>
-                  <li><a href="#">Reporte de Incidentes</a></li>
-              </ul>
-          </li>
-      </ul>
-  </nav>
-</header>
 <body>
 
-   <!-- Formularios -->
-    <div class="contenedor-formularios">
-        <!-- Links de los formularios -->
-        <ul class="contenedor-tabs">
-            <li class="tab tab-segunda active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
-            <li class="tab tab-primera"><a href="#registrarse">Registrarse</a></li>
+<header>
+    <h1>Gestión de Flotas Internas</h1>
+    <nav id="menu" style="display: none;">
+        <ul>
+            <li><a href="#">Gestión de Vehículos</a>
+                <ul class="submenu">
+                    <li><a href="#">Vehículos</a></li>
+                    <li><a href="#">Concesionarios</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Operaciones</a>
+                <ul class="submenu">
+                    <li><a href="#">Ingresar</a></li>
+                    <li><a href="#">Asignaciones</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Reportes</a>
+                <ul class="submenu">
+                    <li><a href="#">Comparendos</a></li>
+                    <li><a href="#">Reporte de Incidentes</a></li>
+                </ul>
+            </li>
+            <li><a href="#" id="logout">Salir</a></li>
         </ul>
+    </nav>
+</header>
 
-        <!-- Contenido de los Formularios -->
-        <div class="contenido-tab">
-            <!-- Iniciar Sesion -->
-            <div id="iniciar-sesion">
-                <h1>Iniciar Sesión</h1>
-                <form action="#" method="post">
+<!-- Sección de formularios -->
+<div class="contenedor-formularios">
+    <!-- Links de los formularios -->
+    <ul class="contenedor-tabs">
+        <li class="tab tab-segunda active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
+        <li class="tab tab-primera"><a href="#registrarse">Registrarse</a></li>
+    </ul>
+
+    <!-- Contenido de los Formularios -->
+    <div class="contenido-tab">
+        
+        <!-- Iniciar Sesion -->
+        <div id="iniciar-sesion">
+            <h1>Iniciar Sesión</h1>
+            <form id="login-form">
+                <div class="contenedor-input">
+                    <label>Usuario <span class="req">*</span></label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="contenedor-input">
+                    <label>Contraseña <span class="req">*</span></label>
+                    <input type="password" id="password" required>
+                </div>
+                <p class="forgot"><a href="#">¿Olvidó su contraseña?</a></p>
+                <input type="submit" class="button button-block" value="Iniciar Sesión">
+            </form>
+        </div>
+
+        <!-- Registrarse -->
+        <div id="registrarse">
+            <h1>Registrarse</h1>
+            <form action="#" method="post">
+                <div class="fila-arriba">
                     <div class="contenedor-input">
-                        <label>
-                            Usuario <span class="req">*</span>
-                        </label>
+                        <label>Nombre <span class="req">*</span></label>
                         <input type="text" required>
                     </div>
 
                     <div class="contenedor-input">
-                        <label>
-                            Contraseña <span class="req">*</span>
-                        </label>
-                        <input type="password" required>
-                    </div>
-                    <p class="forgot"><a href="#">Olvido su contraseña</a></p>
-                    <input type="submit" class="button button-block" value="Iniciar Sesión">
-                </form>
-            </div>
-
-            <!-- Registrarse -->
-            <div id="registrarse">
-                <h1>Registrarse</h1>
-                <form action="#" method="post">
-                    <div class="fila-arriba">
-                        <div class="contenedor-input">
-                            <label>
-                                Nombre <span class="req">*</span>
-                            </label>
-                            <input type="text" required >
-                        </div>
-
-                        <div class="contenedor-input">
-                            <label>
-                                Apellido <span class="req">*</span>
-                            </label>
-                            <input type="text" required>
-                        </div>
-                    </div>
-                    <div class="contenedor-input">
-                        <label>
-                            Usuario <span class="req">*</span>
-                        </label>
+                        <label>Apellido <span class="req">*</span></label>
                         <input type="text" required>
                     </div>
-                    <div class="contenedor-input">
-                            <label>
-                                Email <span class="req">*</span>
-                            </label>
-                        <input type="email" required>
-                    </div>
-                    <div class="contenedor-input">
-                        <label>
-                            Contraseña <span class="req">*</span>
-                        </label>
-                        <input type="password" required>
-                    </div>
+                </div>
+                <div class="contenedor-input">
+                    <label>Usuario <span class="req">*</span></label>
+                    <input type="text" required>
+                </div>
+                <div class="contenedor-input">
+                    <label>Email <span class="req">*</span></label>
+                    <input type="email" required>
+                </div>
+                <div class="contenedor-input">
+                    <label>Contraseña <span class="req">*</span></label>
+                    <input type="password" required>
+                </div>
 
-                    <div class="contenedor-input">
-                        <label>
-                            Repetir Contraseña <span class="req">*</span>
-                        </label>
-                        <input type="password" required>
-                    </div>
+                <div class="contenedor-input">
+                    <label>Repetir Contraseña <span class="req">*</span></label>
+                    <input type="password" required>
+                </div>
 
-                    <input type="submit" class="button button-block" value="Registrarse">
-                </form>
-            </div>
+                <input type="submit" class="button button-block" value="Registrarse">
+            </form>
         </div>
     </div>
+</div>
 
-    <footer>
-        <p>UNIMINUTO - Jefferson Rojas</p>
-    </footer>
+<footer>
+    <p>© 2024 UNIMINUTO - Jefferson Rojas</p>
+</footer>
 
-
-    <script src="jquery.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="main.js"></script>
+<script src="jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
-
-
-

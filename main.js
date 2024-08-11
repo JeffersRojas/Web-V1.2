@@ -21,5 +21,43 @@ $(document).ready(function() {
 
     // Mostrar formulario de Iniciar Sesión al cargar la página
     $('#iniciar-sesion').show();
+    
+    // Manejar el login
+    $('#login-form').on('submit', function(event) {
+        event.preventDefault();
+
+        const username = $('#username').val();
+        const password = $('#password').val();
+
+        if (username === 'admin' && password === 'admin') {
+            $('#iniciar-sesion').hide();
+            $('.contenedor-tabs li a').hide(); // Ocultar el formulario de inicio de sesión
+            $('#menu').fadeIn();  // Mostrar el menú
+
+            // Mostrar el formulario de vehículos por defecto al iniciar sesión
+            $('#vehiculos-form').fadeIn();
+        } else {
+            alert('Usuario o contraseña incorrecta');
+        }
+    });
+
+    // Manejar la selección de formularios
+    $('nav a[data-form]').on('click', function(event) {
+        event.preventDefault();
+        const formToShow = $(this).data('form');
+
+        $('.formulario').hide();  // Oculta todos los formularios
+        $('#' + formToShow).fadeIn();  // Muestra el formulario seleccionado
+    });
+
+    // Manejar la opción de salir
+    $('#logout').on('click', function(event) {
+        event.preventDefault();
+
+        $('#menu').hide();  // Ocultar el menú
+        $('.formulario').hide();  // Ocultar cualquier formulario visible
+        $('#iniciar-sesion').show();
+        $('.contenedor-tabs li a').show();  // Mostrar el formulario de inicio de sesión
+    });
 });
 
