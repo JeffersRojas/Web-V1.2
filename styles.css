@@ -72,6 +72,10 @@ a {
     display: none;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ab767391e36accdcbc1e6e95bb3d1f98c78a456
 h1 {
     text-align: center;
     color: #fff;
@@ -200,6 +204,7 @@ input {
             width: 100%;
         }
     }
+<<<<<<< HEAD
 }
 
 nav ul {
@@ -289,3 +294,6 @@ nav li a#logout {
 nav li a#logout:hover {
     background: #c0392b;  /* Color de fondo cuando se pasa el ratón */
 }
+=======
+}
+>>>>>>> 9ab767391e36accdcbc1e6e95bb3d1f98c78a456
